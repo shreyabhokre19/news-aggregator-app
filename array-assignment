@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY ASSIGNMENT</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button onclick="split()">Click me to get solution for Array Assignment!</button>
+    <script>
+        var input=[1, 9, 2, 3, 3, 3, 3, 3, 4, 4, 5, 6, 7, 8, 5, 6, 6, 9, 10, 10];
+        input.sort(function(a,b){ 
+            return a-b;
+            });
+        
+        var unique=[]; let j=0;let finaloutput="";
+        function uniqueArr(myArray){
+            for(let i=0;i<myArray.length;i++)
+            {
+                if(myArray[i]!=myArray[i+1]){
+                    unique[j]=myArray[i];
+                    j++;
+                }
+                
+            }
+            
+        }
+        uniqueArr(input);
+        
+        function split(){
+            if(unique.length==1){
+                finaloutput='[['+ unique +']]';
+                document.getElementById("demo").innerHTML=finaloutput;
+            }
+            else{
+            var splitted=unique;
+            var final=splitted.splice(0,Math.ceil(splitted.length/2));
+            
+            finaloutput='['+ final +']' + ','+'['+ splitted +']' ;
+            document.getElementById("demo").innerHTML=finaloutput;
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
