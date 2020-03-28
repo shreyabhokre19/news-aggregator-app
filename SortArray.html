@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>SortArray</title>
+</head>
+
+<body>
+	<h2 id="arrayDisplay1">Your input array is :</h2>
+	<h2 id="arrayDisplay2"></h2>
+	<h2 id="arrayDisplay3"></h2>
+
+	<script>
+		let arr = [];
+		let size = prompt('Enter size of your array');
+		for (let i = 0; i < size; i++) {
+			arr.push(prompt('Enter arrays value ' + (i + 1)));
+		}
+		document.getElementById('arrayDisplay1').innerHTML += arr;
+
+		let uniqueArr = [...new Set(arr)];
+		let num = uniqueArr.length;
+		if (num % 2 == 0) {
+			let n = num / 2;
+			let str = uniqueArr.slice(0, n);
+			document.getElementById('arrayDisplay2').innerHTML = str;
+			document.getElementById('arrayDisplay3').innerHTML = uniqueArr.slice(n, uniqueArr.length);
+		}
+		else {
+			document.getElementById('arrayDisplay2').innerHTML = uniqueArr;
+		}
+	</script>
+</body>
+
+</html>
